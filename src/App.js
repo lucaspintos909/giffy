@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
+import { Route } from "wouter";
 
 import ListOfGifs from "./components/ListOfGifs";
 import Searcher from "./components/Searcher/Searcher";
@@ -12,8 +13,8 @@ function App() {
   return (
     <div className="App">
       <section className="app__content">
-        <Searcher/>
-        <ListOfGifs keyword={keyword} />
+        <Searcher />
+        <Route component={ListOfGifs} path="/gif/:keyword"/>
       </section>
     </div>
   );
