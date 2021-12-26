@@ -1,0 +1,18 @@
+.gif{
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.gif__img{
+  max-width: 200px;
+  max-height: 200px;
+}
+
+.gif__title{
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+.gif__id{
+  font-size: 10px;
+}
