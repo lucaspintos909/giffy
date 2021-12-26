@@ -1,28 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./App.css";
 
-const apiURL =
-  "https://api.giphy.com/v1/gifs/search?api_key=ilH61ZakLMNx7CdP457gQ4DLRn7ihoOR&q=pandas&limit=25&offset=0&rating=g&lang=en";
+import ListOfGifs from "./components/ListOfGifs";
+import Searcher from "./components/Searcher/Searcher";
 
 function App() {
-  const [gifs, setGifs] = useState([]);
+  const [keyword, setKeyword] = useState("Simpsons");
 
-  useEffect(() => {
-    fetch(apiURL)
-      .then((res) => res.json())
-      .then((response) => {
-        const { data } = response;
-        const resGifs = data.map((image) => image.images.downsized_medium.url);
-        setGifs(resGifs);
-      });
-  }, []);
+  const changeKeyword = () => {};
 
   return (
     <div className="App">
       <section className="app__content">
-        {gifs.map((gif) => (
-          <img src={gif} />
-        ))}
+        <Searcher/>
+        <ListOfGifs keyword={keyword} />
       </section>
     </div>
   );
