@@ -1,6 +1,15 @@
 .gif{
+  margin-bottom: 30px;
+  padding: 10px;
   text-align: center;
-  margin-bottom: 50px;
+  text-decoration: none;
+  color: white;
+  border-radius: 10px;
+  transition: all .2s ease;
+}
+
+.gif:hover{
+  background-color: #393d46;
 }
 
 .gif__img{
