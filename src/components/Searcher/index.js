@@ -9,7 +9,7 @@ export default function Searcher() {
 
   const searchGif = (evt) => {
     const keyword = evt.target.value;
-    const route = `/gif/${keyword}`;
+    const route = `/search/${keyword}`;
     setLocation(route);
   };
 
