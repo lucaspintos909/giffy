@@ -4,8 +4,8 @@ import getGifs from "../../services/getGifs";
 
 import "./ListOfGifs.css";
 
-export default function ListOfGifs({ params }) {
-  const { keyword } = params;
+export default function ListOfGifs({props}) {
+  const { keyword } = props;
 
   const [gifs, setGifs] = useState([]);
 
