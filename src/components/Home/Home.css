@@ -23,6 +23,6 @@
   transition: color 0.3s ease;
 }
 
-.popular__gifs_link:hover {
+.popular__gifs-link:hover {
   color: blue;
 }
