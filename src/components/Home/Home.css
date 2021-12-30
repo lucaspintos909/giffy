@@ -1,0 +1,22 @@
+.home__title{
+  font-size: 28px;
+  color:rgb(165, 162, 162);
+}
+
+.popular__gifs{
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+.popular__gifs_link{
+  display: block;
+  padding-bottom: 5px;
+  text-decoration: none;
+  color: white;
+  transition: color .3s ease;
+}
+
+.popular__gifs_link:hover{
+  color: blue;
+}
