@@ -1,27 +1,28 @@
-.gif{
+.gif {
   margin-bottom: 30px;
   padding: 10px;
   text-align: center;
   text-decoration: none;
   color: white;
-  border-radius: 10px;
-  transition: all .2s ease;
 }
 
-.gif:hover{
+.gif__img {
+  padding: 5px;
+  max-width: 200px;
+  max-height: 200px;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+.gif__img:hover {
   background-color: #393d46;
 }
 
-.gif__img{
-  max-width: 200px;
-  max-height: 200px;
-}
-
-.gif__title{
+.gif__title {
   font-size: 1rem;
   margin-bottom: 0;
 }
 
-.gif__id{
+.gif__id {
   font-size: 10px;
 }
