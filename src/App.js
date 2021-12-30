@@ -3,7 +3,9 @@ import "./App.css";
 import { Route } from "wouter";
 
 import ListOfGifs from "./components/ListOfGifs";
-import Searcher from "./components/Searcher/Searcher";
+import Searcher from "./components/Searcher";
+import Home from "./components/Home";
+import Navbar from "./components/Navbar";
 
 function App() {
   const [keyword, setKeyword] = useState("Simpsons");
@@ -13,8 +15,10 @@ function App() {
   return (
     <div className="App">
       <section className="app__content">
+        <Navbar />
         <Searcher />
-        <Route component={ListOfGifs} path="/gif/:keyword"/>
+        <Route component={Home} path="/" />
+        <Route component={ListOfGifs} path="/search/:keyword" />
       </section>
     </div>
   );
