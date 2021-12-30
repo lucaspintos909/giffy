@@ -20,7 +20,7 @@ export default function Home() {
       <ul className="popular__gifs-list">
         {popular_gifs.map((gif) => (
           <li key={gif}>
-            <Link className="popular__gifs_link" to={`/search/${gif}`}>
+            <Link className="popular__gif-link" to={`/search/${gif}`}>
               Gifs de {gif}
             </Link>
           </li>
