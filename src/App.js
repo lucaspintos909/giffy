@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import "./App.css";
 import { Route } from "wouter";
 
-import ListOfGifs from "./components/ListOfGifs";
 import Searcher from "./components/Searcher";
-import Home from "./components/Home";
+import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
+import SearchResults from "./pages/SearchResults";
 
 function App() {
   const [keyword, setKeyword] = useState("Simpsons");
@@ -18,7 +18,7 @@ function App() {
         <Navbar />
         <Searcher />
         <Route component={Home} path="/" />
-        <Route component={ListOfGifs} path="/search/:keyword" />
+        <Route component={SearchResults} path="/search/:keyword" />
       </section>
     </div>
   );
