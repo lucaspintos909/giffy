@@ -6,6 +6,7 @@ import Searcher from "./components/Searcher";
 import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
 import SearchResults from "./pages/SearchResults";
+import Detail from "./pages/Detail";
 
 function App() {
   const [keyword, setKeyword] = useState("Simpsons");
@@ -14,11 +15,12 @@ function App() {
 
   return (
     <div className="App">
+      <Navbar />
       <section className="app__content">
-        <Navbar />
-        <Searcher />
+        {/* <Searcher /> */}
         <Route component={Home} path="/" />
         <Route component={SearchResults} path="/search/:keyword" />
+        <Route component={Detail} path="/gif/:id" />
       </section>
     </div>
   );
