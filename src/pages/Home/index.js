@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { useLocation } from "wouter";
 import { Link } from "wouter";
+import { useGifs } from "../../hooks/useGifs";
+import ListOfGifs from "../../components/ListOfGifs";
+
 import "./Home.css";
 
 export default function Home() {
@@ -18,6 +21,8 @@ export default function Home() {
   const [keyword, setKeyword] = useState("");
 
   const [path, pushLocation] = useLocation();
+
+  const { gifs } = useGifs();
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
@@ -44,6 +49,8 @@ export default function Home() {
           onChange={handleChange}
         />
       </form>
+      <h2 className="home__title">Última búsqueda</h2>
+      <ListOfGifs gifs={gifs} />
 
       <h2 className="home__title">Los gifs más populares</h2>
       <ul className="popular__gifs-list">
