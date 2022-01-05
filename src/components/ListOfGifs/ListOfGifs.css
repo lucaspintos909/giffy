@@ -1,3 +1,9 @@
+.gifs__list{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* margin-top: 20px; */
+}
 /* :root {
   --gridList-column: 250px;
   --gridList-rows: 250px;
