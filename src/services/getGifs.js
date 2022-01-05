@@ -9,7 +9,7 @@ export default function getGifs({ keyword }) {
       const { data } = response;
       const gifs = data.map((image) => {
         const { images, title, id } = image;
-        const { url } = images.downsized_medium;
+        const { url } = images.downsized;
         return { id, title, url };
       });
       return gifs;
