@@ -1,20 +1,21 @@
 .navbar {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 20px;
-  background-color: #3d4354;
+  background-color: var(--container-color);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .navbar__title {
+  color: var(--primary-color);
   margin: 0;
 }
 
-.navbar__link {
-  text-decoration: none;
-  color: white;
-  transition: color 0.3s ease;
+.navbar__btn{
+  font-size: 18px;
+  font-weight: 300;
 }
-
-.navbar__link:hover {
-  color: rgb(182, 182, 182);
+.navbar__btn:hover{
+  color: var(--text-color-alt);
 }
