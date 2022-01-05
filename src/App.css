@@ -1,8 +1,17 @@
+.App {
+  background-color: var(--body-color);
+}
+
+body {
+  color: var(--text-color);
+}
+
 .app__content {
-  background-color: #282c34;
   min-height: 100vh;
+  max-width: 85vw;
+  margin: 0 auto;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  /* border-right: 1px solid var(--border-color);
+  border-left: 1px solid var(--border-color); */
 }
