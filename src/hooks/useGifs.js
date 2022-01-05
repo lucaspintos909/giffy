@@ -10,5 +10,5 @@ export function useGifs({ keyword }) {
     });
   }, [keyword]);
 
-  return gifs;
+  return { gifs };
 }
