@@ -8,7 +8,7 @@ export default function Navbar() {
     <nav className="navbar">
       <h1 className="navbar__title">Giffy</h1>
       <div className="navbar__links">
-        <Link className="navbar__link" to="/">Home</Link>
+        <Link className="navbar__link btn navbar__btn" to="/">Home</Link>
       </div>
     </nav>
   );
