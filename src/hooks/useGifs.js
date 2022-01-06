@@ -1,8 +1,9 @@
-import { useState, useEffect } from "react";
+import { useContext, useEffect } from "react";
 import getGifs from "../services/getGifs";
+import GifsContext from "../context/GifsContext";
 
 export function useGifs({ keyword } = { keyword: null }) {
-  const [gifs, setGifs] = useState([]);
+  const {gifs, setGifs} = useContext(GifsContext);
 
   const keywordToUse = keyword || localStorage.getItem('lastKeyword') || 'random';
 
@@ -11,7 +12,7 @@ export function useGifs({ keyword } = { keyword: null }) {
       setGifs(newGifs);
       localStorage.setItem('lastKeyword', keyword);
     });
-  }, [keyword]);
+  }, [keyword, setGifs]);
 
   return { gifs };
 }
