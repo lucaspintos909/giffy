@@ -5,10 +5,10 @@ import { Link } from "wouter";
 
 export default function Gif({ id, title, url }) {
   return (
-    <Link to={`/gif/${id}`} className="gif">
-      <img className="gif__img" src={url} alt={title} />
-      {/* <p className="gif__title">{title}</p>
-      <small className="gif__id">{id}</small> */}
-    </Link>
+    <div className="gif">
+      <Link to={`/gif/${id}`} className="gif__link">
+        <img className="gif__img" src={url} alt={title} />
+      </Link>
+    </div>
   );
 }
