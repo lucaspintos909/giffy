@@ -1,22 +1,22 @@
 .gif {
-  margin-bottom: 30px;
-  padding: 10px;
-  text-align: center;
+  margin-bottom: 0.2em;
+}
+
+.gif__link {
+  display: block;
   text-decoration: none;
-  color: white;
 }
 
 .gif__img {
-  padding: 5px;
-  max-width: 150px;
-  max-height: 150px;
+  padding: 4px;
+  width: 100%;
   border-radius: 10px;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 .gif__img:hover {
-  background-color: #393d46;
+  background-color: var(--border-color);
 }
 
 .gif__title {
