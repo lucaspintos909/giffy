@@ -7,5 +7,10 @@ export default function SearchResults({ params }) {
 
   const { gifs } = useGifs({ keyword });
 
-  return <ListOfGifs gifs={gifs} />;
+  return (
+    <>
+      <h2>Busqueda: {keyword}</h2>
+      <ListOfGifs gifs={gifs} />
+    </>
+  );
 }
