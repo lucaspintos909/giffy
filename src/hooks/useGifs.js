@@ -12,7 +12,7 @@ export function useGifs({ keyword } = { keyword: null }) {
       setGifs(newGifs);
       localStorage.setItem('lastKeyword', keyword);
     });
-  }, [keyword, setGifs]);
+  }, [keyword, setGifs, keywordToUse]);
 
   return { gifs };
 }
