@@ -1,0 +1,29 @@
+.gif {
+  margin-bottom: 0.2em;
+}
+
+.gif__link {
+  display: block;
+  text-decoration: none;
+}
+
+.gif__img {
+  padding: 4px;
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.gif__img:hover {
+  background-color: var(--border-color);
+}
+
+.gif__title {
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+.gif__id {
+  font-size: 10px;
+}

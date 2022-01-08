@@ -1,0 +1,22 @@
+.list__gifs {
+  margin-top: 10px;
+  column-count: 2;
+}
+
+@media (min-width: 640px) {
+  .list__gifs {
+    column-count: 3;
+  }
+}
+
+@media (min-width: 768px) {
+  .list__gifs {
+    column-count: 4;
+  }
+}
+
+@media (min-width:  1024px) {
+  .list__gifs {
+    column-count: 5;
+  }
+}
