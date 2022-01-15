@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import { useLocation } from "wouter";
+import React from "react";
 import { Link } from "wouter";
 import { useGifs } from "../../hooks/useGifs";
 import ListOfGifs from "../../components/ListOfGifs";
+import Searcher from "../../components/Searcher";
 
 import "./Home.css";
 
@@ -18,38 +18,13 @@ export default function Home() {
     "Perros",
   ];
 
-  const [keyword, setKeyword] = useState("");
-
-  const [, pushLocation] = useLocation();
-
-  const { gifs } = useGifs();
-
-  const handleSubmit = (evt) => {
-    evt.preventDefault();
-    pushLocation(`/search/${keyword}`);
-  };
-
-  const handleChange = (evt) => {
-    setKeyword(evt.target.value);
-  };
+  const { gifs, lastKeyword } = useGifs();
 
   return (
     <div className="home">
-      <form className="home__form" onSubmit={handleSubmit}>
-        <label htmlFor="searchInput" className="form__label">
-          Buscar gif
-        </label>
-        <input
-          id="searchInput"
-          type="text"
-          className="form__input"
-          autoComplete="off"
-          placeholder="Ingrese la búsqueda"
-          value={keyword}
-          onChange={handleChange}
-        />
-      </form>
-      <h2 className="home__title">Última búsqueda</h2>
+      <Searcher />
+
+      <h2 className="home__title">Última búsqueda: {lastKeyword}</h2>
       <ListOfGifs gifs={gifs} />
 
       <h2 className="home__title">Los gifs más populares</h2>
