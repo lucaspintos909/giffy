@@ -4,7 +4,7 @@ import ListOfGifs from "../../components/ListOfGifs";
 import Searcher from "../../components/Searcher";
 import TrendingSearches from "../../components/TrendingSearches";
 
-import "./Home.css";
+import "./index.css";
 
 export default function Home() {
   const { gifs, lastKeyword } = useGifs();
