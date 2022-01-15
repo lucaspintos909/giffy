@@ -1,14 +1,14 @@
-.search__form{
+.searcher__form{
   margin: 30px 0;
   text-align: center;
 }
 
-.search__form label{
+.searcher__label{
   display: block;
   margin-bottom: 5px;
 }
 
-.search__input{
+.searcher__input{
   width: 300px;
   padding: 5px;
   font-size: 16px;
@@ -16,4 +16,5 @@
   text-align: center;
   border: 0;
   border-radius: 5px;
+  outline: none;
 }
