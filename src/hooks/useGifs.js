@@ -1,20 +1,36 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import getGifs from "services/getGifs";
 import GifsContext from "context/GifsContext";
 
+const INITIAL_PAGE = 0;
+
 export function useGifs({ keyword } = { keyword: null }) {
-  const { gifs, setGifs, lastKeyword, setLastKeyword } = useContext(GifsContext);
+  const [loadingNextPage, setLoadingNexPage] = useState(false);
+
+  const [page, setPage] = useState(INITIAL_PAGE);
+
+  const { gifs, setGifs, lastKeyword, setLastKeyword } =
+    useContext(GifsContext);
+
+  const keywordToUse =
+    keyword || localStorage.getItem("lastKeyword") || "random";
 
   useEffect(() => {
-    const keywordToUse =
-      keyword || localStorage.getItem("lastKeyword") || "random";
-
     getGifs({ keyword: keywordToUse }).then((newGifs) => {
       setGifs(newGifs);
       setLastKeyword(keywordToUse);
       localStorage.setItem("lastKeyword", keywordToUse);
     });
-  }, [keyword, setGifs, setLastKeyword]);
+  }, [keyword, keywordToUse, setGifs, setLastKeyword]);
 
-  return { gifs, lastKeyword };
+  useEffect(() => {
+    if (page === INITIAL_PAGE) return;
+    setLoadingNexPage(true);
+    getGifs({ keyword: keywordToUse, page }).then((nextGifs) => {
+      setGifs((prevGifs) => prevGifs.concat(nextGifs));
+      setLoadingNexPage(false);
+    });
+  }, [page, setGifs, keywordToUse]);
+
+  return { gifs, lastKeyword: keywordToUse, setPage, loadingNextPage };
 }
