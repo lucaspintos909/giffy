@@ -1,0 +1,26 @@
+.popular__gifs-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 20px 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+.popular__gifs-link {
+  display: block;
+  padding-bottom: 5px;
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.popular__gifs-link:hover {
+  color: var(--primary-color);
+}
+
+@media (min-width: 768px) {
+  .popular__gifs-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
