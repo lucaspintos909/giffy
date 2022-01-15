@@ -7,7 +7,6 @@ export default function getTrendingTerms() {
     .then((res) => res.json())
     .then((response) => {
       const { data } = response;
-      console.log(data);
       return data;
     });
 }
