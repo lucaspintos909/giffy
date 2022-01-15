@@ -1,4 +1,5 @@
 .list__gifs {
+  min-height: 100vh;
   margin-top: 10px;
   column-count: 2;
 }
