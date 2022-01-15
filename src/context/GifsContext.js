@@ -6,7 +6,11 @@ export default Context;
 
 export function GifsContextProvider({ children }) {
   const [gifs, setGifs] = useState([]);
+  const [lastKeyword, setLastKeyword] = useState("");
+
   return (
-    <Context.Provider value={{ gifs, setGifs }}>{children}</Context.Provider>
+    <Context.Provider value={{ gifs, setGifs, lastKeyword, setLastKeyword }}>
+      {children}
+    </Context.Provider>
   );
 }
