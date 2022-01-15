@@ -1,28 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
+import { useLocation } from "wouter";
 
 import "./index.css";
 
-import { useLocation } from "wouter";
-
 export default function Searcher() {
-  const [location, setLocation] = useLocation();
+  const [keyword, setKeyword] = useState("");
 
-  const searchGif = (evt) => {
-    const keyword = evt.target.value;
-    const route = `/search/${keyword}`;
-    setLocation(route);
+  const [, pushLocation] = useLocation();
+
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
+    pushLocation(`/search/${keyword}`);
+  };
+
+  const handleChange = (evt) => {
+    setKeyword(evt.target.value);
   };
 
   return (
-    <div className="search__form">
-      <label htmlFor="searchInput"> Buscar gif </label>
+    <form className="searcher__form" onSubmit={handleSubmit}>
+      <label htmlFor="searchInput" className="searcher__label">
+        Buscar gif
+      </label>
       <input
-        className="search__input"
-        id="searchInput"
         type="text"
+        className="searcher__input"
+        autoComplete="off"
         placeholder="Ingrese la búsqueda"
-        onChange={searchGif}
+        value={keyword}
+        onChange={handleChange}
       />
-    </div>
+    </form>
   );
 }
