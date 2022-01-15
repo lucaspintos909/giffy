@@ -1,5 +1,6 @@
 :root {
-  --primary-color: #52a5e0;
+  --primary-color: #2795e4;
+  --primary-color-alt: #52a5e0;
   --text-color: #eff3f5;
   --text-color-alt: #b3b3b3;
   --content-color: #c8cdd0;
@@ -27,5 +28,7 @@ code {
   padding: 5px 10px;
   color: var(--text-color);
   text-decoration: none;
-  transition: color .2s ease;
+  transition: .2s ease;
+  border: none;
+  cursor: pointer;
 }
