@@ -9,7 +9,7 @@ export default function SearchResults({ params }) {
 
   return (
     <>
-      <h2>Busqueda: {keyword}</h2>
+      <h2>Busqueda: {decodeURI(keyword)}</h2>
       <ListOfGifs gifs={gifs} />
     </>
   );

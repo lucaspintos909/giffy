@@ -13,10 +13,10 @@ export default function Home() {
     <div className="home">
       <Searcher />
 
-      <h2 className="home__title">Última búsqueda: {lastKeyword}</h2>
+      <h2 className="home__title">Última búsqueda: {decodeURI(lastKeyword)}</h2>
       <ListOfGifs gifs={gifs} />
 
-      <TrendingSearches/>
+      <TrendingSearches />
     </div>
   );
 }
