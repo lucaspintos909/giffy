@@ -8,6 +8,15 @@ export default function Detail({ params }) {
   const gifs = useGlobalGifs();
 
   const gif = gifs.find((singleGif) => singleGif.id === params.id);
+
   
-  return <Gif {...gif} />;
+
+  return (
+    <div className="detail">
+      <div className="detail__header">
+        <h2 className="detail__title">{gif.title}</h2>
+      </div>
+      <Gif {...gif} />
+    </div>
+  );
 }
