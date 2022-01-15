@@ -11,12 +11,7 @@
   padding: 4px;
   width: 100%;
   border-radius: 10px;
-  cursor: pointer;
   transition: all 0.2s ease;
-}
-
-.gif__img:hover {
-  background-color: var(--border-color);
 }
 
 .gif__title {
