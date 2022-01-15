@@ -1,8 +1,8 @@
 import React from "react";
-import { useGifs } from "../../hooks/useGifs";
-import ListOfGifs from "../../components/ListOfGifs";
-import Searcher from "../../components/Searcher";
-import TrendingSearches from "../../components/TrendingSearches";
+import { useGifs } from "hooks/useGifs";
+import ListOfGifs from "components/ListOfGifs";
+import Searcher from "components/Searcher";
+import TrendingSearches from "components/TrendingSearches";
 
 import "./index.css";
 

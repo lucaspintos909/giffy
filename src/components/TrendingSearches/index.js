@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "wouter";
 
-import getTrendingTerms from "../../services/getTrendingTermsService";
+import getTrendingTerms from "services/getTrendingTermsService";
 
 import "./index.css";
 
