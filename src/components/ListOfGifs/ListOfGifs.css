@@ -3,6 +3,14 @@
   column-count: 2;
 }
 
+.list__gifs .gif__img{
+  cursor: pointer;
+}
+
+.list__gifs .gif__img:hover {
+  background-color: var(--border-color);
+}
+
 @media (min-width: 640px) {
   .list__gifs {
     column-count: 3;
