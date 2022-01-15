@@ -3,15 +3,18 @@ import getGifs from "../services/getGifs";
 import GifsContext from "../context/GifsContext";
 
 export function useGifs({ keyword } = { keyword: null }) {
-  const {gifs, setGifs} = useContext(GifsContext);
+  const { gifs, setGifs, lastKeyword, setLastKeyword } = useContext(GifsContext);
 
   useEffect(() => {
-    const keywordToUse = keyword || localStorage.getItem('lastKeyword') || 'random';
+    const keywordToUse =
+      keyword || localStorage.getItem("lastKeyword") || "random";
+
     getGifs({ keyword: keywordToUse }).then((newGifs) => {
       setGifs(newGifs);
-      localStorage.setItem('lastKeyword', keywordToUse);
+      setLastKeyword(keywordToUse);
+      localStorage.setItem("lastKeyword", keywordToUse);
     });
-  }, [keyword, setGifs]);
+  }, [keyword, setGifs, setLastKeyword]);
 
-  return { gifs };
+  return { gifs, lastKeyword };
 }
