@@ -9,8 +9,7 @@ export function useGifs({ keyword } = { keyword: null }) {
 
   const [page, setPage] = useState(INITIAL_PAGE);
 
-  const { gifs, setGifs, lastKeyword, setLastKeyword } =
-    useContext(GifsContext);
+  const { gifs, setGifs } = useContext(GifsContext);
 
   const keywordToUse =
     keyword || localStorage.getItem("lastKeyword") || "random";
@@ -18,10 +17,9 @@ export function useGifs({ keyword } = { keyword: null }) {
   useEffect(() => {
     getGifs({ keyword: keywordToUse }).then((newGifs) => {
       setGifs(newGifs);
-      setLastKeyword(keywordToUse);
       localStorage.setItem("lastKeyword", keywordToUse);
     });
-  }, [keyword, keywordToUse, setGifs, setLastKeyword]);
+  }, [keyword, keywordToUse, setGifs]);
 
   useEffect(() => {
     if (page === INITIAL_PAGE) return;
