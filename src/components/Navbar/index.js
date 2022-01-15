@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "wouter";
 
-import "./Navbar.css";
+import "./index.css";
 
 export default function Navbar() {
   return (

@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./Searcher.css";
+import "./index.css";
 
 import { useLocation } from "wouter";
 
