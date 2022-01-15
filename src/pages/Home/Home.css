@@ -27,23 +27,3 @@
 .popular__gifs-link:hover {
   color: blue;
 }
-
-.home__form{
-  margin: 30px 0;
-  text-align: center;
-}
-
-.form__label{
-  display: block;
-  margin-bottom: 5px;
-}
-
-.form__input{
-  width: 300px;
-  padding: 5px;
-  font-size: 16px;
-  font-family: 'Ubuntu';
-  text-align: center;
-  border: 0;
-  border-radius: 5px;
-}
