@@ -1,26 +1,45 @@
-import React from "react";
+import React, { useRef, useEffect, useCallback } from "react";
 import ListOfGifs from "components/ListOfGifs";
 import { useGifs } from "hooks/useGifs";
+import { useNearElement } from "hooks/useNearElement";
 
 import "./index.css";
+import debounce from "just-debounce-it";
 
 export default function SearchResults({ params }) {
   const { keyword } = params;
 
-  const { gifs, setPage } = useGifs({ keyword });
+  const { loading, gifs, setPage } = useGifs({ keyword });
 
-  const handleNextPage = () => setPage((prevPage) => prevPage + 1);
+  const externalRef = useRef();
+
+  const { isNearElement } = useNearElement({
+    distance: "400px",
+    externalRef: loading ? null : externalRef,
+    once: false,
+  });
+
+  const debounceHandleNextPage = useCallback(
+    debounce(() => setPage((prevPage) => prevPage + 1), 150),
+    []
+  );
+
+  useEffect(() => {
+    console.log(isNearElement);
+    if (isNearElement) debounceHandleNextPage();
+  }, [debounceHandleNextPage, isNearElement]);
 
   return (
     <>
-      <h2>Busqueda: {decodeURI(keyword)}</h2>
-      <ListOfGifs gifs={gifs} />
-
-      <div className="navigation">
-        <button onClick={handleNextPage} className="navigation__btn btn">
-          Mostrar más
-        </button>
-      </div>
+      {loading ? (
+        <div></div> /* Acá va el spinner */
+      ) : (
+        <>
+          <h2>Busqueda: {decodeURI(keyword)}</h2>
+          <ListOfGifs gifs={gifs} />
+          <div id="visor" ref={externalRef}></div>
+        </>
+      )}
     </>
   );
 }
