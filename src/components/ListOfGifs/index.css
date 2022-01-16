@@ -4,11 +4,11 @@
   grid-template-rows: masonry;
   gap: 0 10px;
   align-items: center;
-  min-height: 100vh;
+  min-height: 150vh;
   margin-top: 10px;
 }
 
-.gifs__list .gif__img{
+.gifs__list .gif__img {
   cursor: pointer;
 }
 
