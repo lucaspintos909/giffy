@@ -1,16 +1,24 @@
 import { useState, useEffect, useRef } from "react";
 
-export function useNearElement(distance = "200px") {
+export function useNearElement({
+  distance = "200px",
+  externalRef,
+  once = true,
+} = {}) {
   const [isNearElement, setIsNearElement] = useState(false);
   const elementRef = useRef();
 
   useEffect(() => {
+    const ref = externalRef ? externalRef.current : elementRef.current;
+
     const onChange = (entries, observer) => {
       const el = entries[0];
 
       if (el.isIntersecting) {
         setIsNearElement(true);
-        observer.disconnect();
+        once && observer.disconnect();
+      } else {
+        !once && setIsNearElement(false);
       }
     };
 
@@ -18,7 +26,7 @@ export function useNearElement(distance = "200px") {
       rootMargin: distance,
     });
 
-    observer.observe(elementRef.current);
+    observer.observe(ref);
 
     return () => observer.disconnect();
   });
