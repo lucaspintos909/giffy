@@ -1,7 +1,11 @@
 .list__gifs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-rows: masonry;
+  gap: 0 10px;
+  align-items: center;
   min-height: 100vh;
   margin-top: 10px;
-  column-count: 2;
 }
 
 .list__gifs .gif__img{
@@ -12,7 +16,7 @@
   background-color: var(--border-color);
 }
 
-@media (min-width: 640px) {
+/* @media (min-width: 640px) {
   .list__gifs {
     column-count: 3;
   }
@@ -28,4 +32,4 @@
   .list__gifs {
     column-count: 5;
   }
-}
+} */
