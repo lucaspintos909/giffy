@@ -9,7 +9,9 @@ export function useNearElement({
   const elementRef = useRef();
 
   useEffect(() => {
-    const ref = externalRef ? externalRef.current : elementRef.current;
+    let observer;
+
+    const element = externalRef ? externalRef.current : elementRef.current;
 
     const onChange = (entries, observer) => {
       const el = entries[0];
@@ -22,11 +24,17 @@ export function useNearElement({
       }
     };
 
-    const observer = new IntersectionObserver(onChange, {
-      rootMargin: distance,
-    });
+    Promise.resolve(
+      typeof IntersectionObserver !== "undefined"
+        ? IntersectionObserver
+        : import("intersection-observer")
+    ).then(() => {
+      observer = new IntersectionObserver(onChange, {
+        rootMargin: distance,
+      });
 
-    observer.observe(ref);
+      if (element) observer.observe(element);
+    });
 
     return () => observer.disconnect();
   });
