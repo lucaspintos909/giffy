@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useCallback } from "react";
 import ListOfGifs from "components/ListOfGifs";
 import { useGifs } from "hooks/useGifs";
 import { useNearElement } from "hooks/useNearElement";
+import Searcher from "components/Searcher";
 
 import "./index.css";
 import debounce from "just-debounce-it";
@@ -35,6 +36,7 @@ export default function SearchResults({ params }) {
         <div></div> /* Acá va el spinner */
       ) : (
         <>
+          <Searcher searchKeyword={keyword} />
           <ListOfGifs gifs={gifs} />
           <div id="visor" ref={externalRef}></div>
         </>
