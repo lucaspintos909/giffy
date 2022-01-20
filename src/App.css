@@ -8,10 +8,14 @@ body {
 
 .app__content {
   min-height: 100vh;
-  max-width: 85vw;
+  max-width: 95vw;
   margin: 0 auto;
   align-items: center;
   justify-content: center;
-  /* border-right: 1px solid var(--border-color);
-  border-left: 1px solid var(--border-color); */
+}
+
+@media (min-width: 640px) {
+  .app__content {
+    max-width: 85vw;
+  }
 }
