@@ -5,7 +5,6 @@ import Navbar from "components/Navbar";
 import SearchResults from "pages/SearchResults";
 import Detail from "pages/Detail";
 import { GifsContextProvider } from "context/GifsContext";
-import Searcher from "components/Searcher";
 
 import "./App.css";
 
@@ -14,8 +13,6 @@ function App() {
     <div className="App">
       <Navbar />
       <section className="app__content">
-        <Searcher />
-
         <GifsContextProvider>
           <Route component={Home} path="/" />
           <Route component={SearchResults} path="/search/:keyword" />
