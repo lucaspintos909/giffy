@@ -20,6 +20,7 @@ export default function SearchResults({ params }) {
     once: false,
   });
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const debounceHandleNextPage = useCallback(
     debounce(() => setPage((prevPage) => prevPage + 1), 150),
     []
