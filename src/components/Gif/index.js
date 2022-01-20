@@ -1,5 +1,5 @@
 import React from "react";
-import "./Gif.css";
+import "./index.css";
 
 import { Link } from "wouter";
 

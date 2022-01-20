@@ -1,0 +1,35 @@
+.gifs__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-rows: masonry;
+  gap: 0 10px;
+  align-items: center;
+  min-height: 150vh;
+  margin-top: 10px;
+}
+
+.gifs__list .gif__img {
+  cursor: pointer;
+}
+
+.gifs__list .gif__img:hover {
+  background-color: var(--border-color);
+}
+
+/* @media (min-width: 640px) {
+  .gifs__list {
+    column-count: 3;
+  }
+}
+
+@media (min-width: 768px) {
+  .gifs__list {
+    column-count: 4;
+  }
+}
+
+@media (min-width:  1024px) {
+  .gifs__list {
+    column-count: 5;
+  }
+} */

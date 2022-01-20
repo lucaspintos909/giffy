@@ -1,0 +1,31 @@
+.detail {
+  text-align: center;
+}
+
+.detail__title {
+  text-align: center;
+}
+
+.detail .gif__img {
+  max-width: 80vw;
+  max-height: 400px;
+  object-fit: contain;
+}
+
+@media (min-width: 640px) {
+  .detail .gif__img {
+    max-width: 80vw;
+  }
+}
+
+@media (min-width: 768px) {
+  .detail .gif__img {
+    max-width: 60vw;
+  }
+}
+
+@media (min-width: 1024px) {
+  .detail .gif__img {
+    max-width: 40vw;
+  }
+}
