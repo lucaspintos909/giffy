@@ -35,7 +35,6 @@ export default function SearchResults({ params }) {
         <div></div> /* Acá va el spinner */
       ) : (
         <>
-          <h2>Busqueda: {decodeURI(keyword)}</h2>
           <ListOfGifs gifs={gifs} />
           <div id="visor" ref={externalRef}></div>
         </>
