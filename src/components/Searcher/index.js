@@ -3,14 +3,15 @@ import { useLocation } from "wouter";
 
 import "./index.css";
 
-export default function Searcher() {
-  const [keyword, setKeyword] = useState("");
+export default function Searcher({ searchKeyword = "" }) {
+  const [keyword, setKeyword] = useState(searchKeyword);
 
   const [, pushLocation] = useLocation();
 
+  console.log(searchKeyword);
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    pushLocation(`/search/${keyword}`);
+    pushLocation(`/search/${keyword.toString()}`);
   };
 
   const handleChange = (evt) => {
