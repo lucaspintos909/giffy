@@ -27,7 +27,6 @@ export default function SearchResults({ params }) {
   );
 
   useEffect(() => {
-    console.log(isNearElement);
     if (isNearElement) debounceHandleNextPage();
   }, [debounceHandleNextPage, isNearElement]);
 
