@@ -8,7 +8,6 @@ export default function Searcher({ searchKeyword = "" }) {
 
   const [, pushLocation] = useLocation();
 
-  console.log(searchKeyword);
   const handleSubmit = (evt) => {
     evt.preventDefault();
     pushLocation(`/search/${keyword.toString()}`);
