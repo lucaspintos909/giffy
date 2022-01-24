@@ -3,7 +3,9 @@ import "./index.css";
 
 import { Link } from "wouter";
 
-export default function Gif({ id, title, url }) {
+export default React.memo(Gif);
+
+function Gif({ id, title, url }) {
   return (
     <div className="gif">
       <Link to={`/gif/${id}`} className="gif__link">

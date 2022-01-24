@@ -3,7 +3,9 @@ import Gif from "components/Gif";
 
 import "./index.css";
 
-export default function ListOfGifs({ gifs }) {
+export default React.memo(ListOfGifs);
+
+function ListOfGifs({ gifs }) {
   return (
     <div className="gifs__list">
       {gifs.map(({ id, title, url }) => (
